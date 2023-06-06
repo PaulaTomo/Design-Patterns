@@ -6,7 +6,6 @@ import org.example.creational_patterns.factoryMethod.WindowsNotifier;
 import org.example.creational_patterns.Student;
 
 public class Main {
-    private static Notifier notifier;
     public static void main(String[] args) {
 
         Student studentOne = Student.getInstance().builder()
@@ -24,16 +23,5 @@ public class Main {
         System.out.println(studentTwo.getInfo());
 
 
-        String osName = System.getProperty("os.name");
-       switch (osName){
-           case "Mac OS X":
-               notifier = new MacOsNotifier();
-               break;
-           case "Windows 11" :
-               notifier = new WindowsNotifier();
-               break;
-
-       }
-        notifier.sendNotification();
     }
 }
